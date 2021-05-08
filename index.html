@@ -226,7 +226,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-05-08 10:24:47 / 修改时间：10:31:41" itemprop="dateCreated datePublished" datetime="2021-05-08T10:24:47+08:00">2021-05-08</time>
+              <time title="创建时间：2021-05-08 10:24:47 / 修改时间：10:55:15" itemprop="dateCreated datePublished" datetime="2021-05-08T10:24:47+08:00">2021-05-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,108 +251,20 @@
       
           <h1 id="Hbase实验二"><a href="#Hbase实验二" class="headerlink" title="Hbase实验二"></a>Hbase实验二</h1><h2 id="1、一般操作"><a href="#1、一般操作" class="headerlink" title="1、一般操作"></a>1、一般操作</h2><h3 id="查询服务器状态"><a href="#查询服务器状态" class="headerlink" title="查询服务器状态"></a>查询服务器状态</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">status</span><br></pre></td></tr></table></figure>
 
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620197294908.png" alt="1620197294908"></p>
+<p><img src="../images/Hbase%E8%AF%AD%E6%B3%95%E5%AE%9E%E9%AA%8C/1620197294908.png" alt="1620197294908"></p>
 <h3 id="查询Hbase版本"><a href="#查询Hbase版本" class="headerlink" title="查询Hbase版本"></a>查询Hbase版本</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">version</span><br></pre></td></tr></table></figure>
 
 <h3 id="查看所有表"><a href="#查看所有表" class="headerlink" title="查看所有表"></a>查看所有表</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">version</span><br></pre></td></tr></table></figure>
 
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199317627.png" alt="1620199317627"></p>
-<h2 id="2、增删改"><a href="#2、增删改" class="headerlink" title="2、增删改"></a>2、增删改</h2><h3 id="创建一个表"><a href="#创建一个表" class="headerlink" title="创建一个表"></a>创建一个表</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create &#x27;member057&#x27;,&#x27;member_id&#x27;,&#x27;address&#x27;,&#x27;info&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199328321.png" alt="1620199328321"></p>
-<h3 id="获得表的描述"><a href="#获得表的描述" class="headerlink" title="获得表的描述"></a>获得表的描述</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe &#x27;member057&#x27; </span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199337845.png" alt="1620199337845"></p>
-<h3 id="添加一个列族"><a href="#添加一个列族" class="headerlink" title="添加一个列族"></a>添加一个列族</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter &#x27;member057&#x27;,&#x27;id&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199345105.png" alt="1620199345105"></p>
-<h3 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a>添加数据</h3><ul>
-<li><h3 id="在HBase-shell中，我们可以通过put命令来插入数据。列族下的列不需要提前创建，在需要时通过：来指定即可。添加数据如下"><a href="#在HBase-shell中，我们可以通过put命令来插入数据。列族下的列不需要提前创建，在需要时通过：来指定即可。添加数据如下" class="headerlink" title="在HBase  shell中，我们可以通过put命令来插入数据。列族下的列不需要提前创建，在需要时通过：来指定即可。添加数据如下"></a>在HBase  shell中，我们可以通过put命令来插入数据。列族下的列不需要提前创建，在需要时通过：来指定即可。添加数据如下</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">put &#x27;member057&#x27;, &#x27;debugo&#x27;,&#x27;id&#x27;,&#x27;11&#x27;</span><br><span class="line">put &#x27;member057&#x27;, &#x27;debugo&#x27;,&#x27;info:age&#x27;,&#x27;27&#x27;</span><br><span class="line">put &#x27;member057&#x27;, &#x27;debugo&#x27;,&#x27;info:birthday&#x27;,&#x27;1991-04-04&#x27;</span><br><span class="line">put &#x27;member057&#x27;, &#x27;debugo&#x27;,&#x27;info:industry&#x27;, &#x27;it&#x27;</span><br><span class="line">put &#x27;member057&#x27;, &#x27;debugo&#x27;,&#x27;address:city&#x27;,&#x27;Shanghai&#x27;</span><br><span class="line">put &#x27;member057&#x27;, &#x27;debugo&#x27;,&#x27;address:country&#x27;,&#x27;China&#x27;</span><br><span class="line">put &#x27;member057&#x27;, &#x27;Sariel&#x27;, &#x27;id&#x27;, &#x27;21&#x27;</span><br><span class="line">put &#x27;member057&#x27;, &#x27;Sariel&#x27;,&#x27;info:age&#x27;, &#x27;26&#x27;</span><br><span class="line">put &#x27;member057&#x27;, &#x27;Sariel&#x27;,&#x27;info:birthday&#x27;, &#x27;1992-05-09&#x27;</span><br><span class="line">put &#x27;member057&#x27;, &#x27;Sariel&#x27;,&#x27;info:industry&#x27;, &#x27;it&#x27;</span><br><span class="line">put &#x27;member057&#x27;, &#x27;Sariel&#x27;,&#x27;address:city&#x27;, &#x27;Beijing&#x27;</span><br><span class="line">put &#x27;member057&#x27;, &#x27;Sariel&#x27;,&#x27;address:country&#x27;, &#x27;China&#x27;</span><br><span class="line">put &#x27;member057&#x27;, &#x27;Elvis&#x27;, &#x27;id&#x27;, &#x27;22&#x27;</span><br><span class="line">put &#x27;member057&#x27;, &#x27;Elvis&#x27;,&#x27;info:age&#x27;, &#x27;26&#x27;</span><br><span class="line">put &#x27;member057&#x27;, &#x27;Elvis&#x27;,&#x27;info:birthday&#x27;, &#x27;1992-09-14&#x27;</span><br><span class="line">put &#x27;member057&#x27;, &#x27;Elvis&#x27;,&#x27;info:industry&#x27;, &#x27;it&#x27;</span><br><span class="line">put &#x27;member057&#x27;, &#x27;Elvis&#x27;,&#x27;address:city&#x27;, &#x27;Beijing&#x27;</span><br><span class="line">put &#x27;member057&#x27;, &#x27;Elvis&#x27;,&#x27;address:country&#x27;, &#x27;china</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199354966.png" alt="1620199354966"></p>
-</li>
-</ul>
-<h3 id="查看表数据"><a href="#查看表数据" class="headerlink" title="查看表数据"></a>查看表数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scan &#x27;member057&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199360333.png" alt="1620199360333"></p>
-<h3 id="删除一个列族"><a href="#删除一个列族" class="headerlink" title="删除一个列族"></a>删除一个列族</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter &#x27;member057&#x27;, &#123;NAME =&gt; &#x27;member_id&#x27;, METHOD =&gt; &#x27;delete&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199365309.png" alt="1620199365309"></p>
-<h3 id="删除列"><a href="#删除列" class="headerlink" title="删除列"></a>删除列</h3><ul>
-<li><p>通过delete命令，我们可以删除id为某个值’info:age’ 字段，接下来的get就无值了：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">delete &#x27;member057&#x27;,&#x27;debugo&#x27;,&#x27;info:age&#x27;</span><br><span class="line">get &#x27;member057&#x27;,&#x27;debugo&#x27;,&#x27;info:age&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199370489.png" alt="1620199370489"></p>
-</li>
-<li><p>删除整行的值，用deleteall命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deleteall &#x27;member057&#x27;,&#x27;debugo&#x27;</span><br><span class="line">get &#x27;member057&#x27;,&#x27;debugo&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199374998.png" alt="1620199374998"></p>
-</li>
-<li><p>通过enable和disable来启用/禁用这个表，相应的可以通过is_enabled和is_disabled来检查表是否被禁用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">is_enabled &#x27;member057&#x27;</span><br><span class="line">is_disabled &#x27;member057&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199379588.png" alt="1620199379588"></p>
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199450690.png" alt="1620199450690"></p>
-</li>
-<li><p>使用exists来检查表是否存在</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exists &#x27;member057&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199457606.png" alt="1620199457606"></p>
-</li>
-<li><p>删除表需要先将表disable</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">disable &#x27;member057&#x27;</span><br><span class="line">drop &#x27;member057&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199462001.png" alt="1620199462001"></p>
-</li>
-</ul>
-<h2 id="3、查询"><a href="#3、查询" class="headerlink" title="3、查询"></a>3、查询</h2><h3 id="查询表中有多少行，用count命令："><a href="#查询表中有多少行，用count命令：" class="headerlink" title="查询表中有多少行，用count命令："></a>查询表中有多少行，用count命令：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">count &#x27;member057&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199466891.png" alt="1620199466891"></p>
-<h3 id="get"><a href="#get" class="headerlink" title="get"></a>get</h3><ul>
-<li><p>获取一个id的所有数据</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get &#x27;member057&#x27;, &#x27;Sariel&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199472428.png" alt="1620199472428"></p>
-</li>
-<li><p>获得一个id，一个列族（一个列）中的所有数据：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get &#x27;member057&#x27;, &#x27;Sariel&#x27;, &#x27;info&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199476998.png" alt="1620199476998"></p>
-</li>
-</ul>
-<h3 id="查询整表数据"><a href="#查询整表数据" class="headerlink" title="查询整表数据"></a>查询整表数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scan &#x27;member057&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199481320.png" alt="1620199481320"></p>
-<h3 id="扫描整个列族"><a href="#扫描整个列族" class="headerlink" title="扫描整个列族"></a>扫描整个列族</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scan &#x27;member057&#x27;, &#123;COLUMN=&gt;&#x27;info&#x27;&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199492029.png" alt="1620199492029"></p>
-<h3 id="指定扫描期中的某个列"><a href="#指定扫描期中的某个列" class="headerlink" title="指定扫描期中的某个列"></a>指定扫描期中的某个列</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scan &#x27;member057&#x27;, &#123;COLUMNS=&gt; &#x27;info:birthday&#x27;&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199498972.png" alt="1620199498972"></p>
-<ul>
-<li><h3 id="除了列（COLUMNS）修饰词外，HBase-还支持-Limit（限制查询结果行数），STARTROW（ROWKEY-起始行。会先根据这个-key-定位到-region，再向后扫描）、STOPROW-结束行-、TIMERANGE（限定时间戳范围）、VERSIONS（版本数）、和-FILTER（按条件过滤行）等。比如我们从-Sariel-这个-rowkey-开始，找下一个行的最新版本："><a href="#除了列（COLUMNS）修饰词外，HBase-还支持-Limit（限制查询结果行数），STARTROW（ROWKEY-起始行。会先根据这个-key-定位到-region，再向后扫描）、STOPROW-结束行-、TIMERANGE（限定时间戳范围）、VERSIONS（版本数）、和-FILTER（按条件过滤行）等。比如我们从-Sariel-这个-rowkey-开始，找下一个行的最新版本：" class="headerlink" title="除了列（COLUMNS）修饰词外，HBase 还支持 Limit（限制查询结果行数），STARTROW（ROWKEY 起始行。会先根据这个 key 定位到 region，再向后扫描）、STOPROW(结束行)、TIMERANGE（限定时间戳范围）、VERSIONS（版本数）、和 FILTER（按条件过滤行）等。比如我们从 Sariel 这个 rowkey 开始，找下一个行的最新版本："></a>除了列（COLUMNS）修饰词外，HBase 还支持 Limit（限制查询结果行数），STARTROW（ROWKEY 起始行。会先根据这个 key 定位到 region，再向后扫描）、STOPROW(结束行)、TIMERANGE（限定时间戳范围）、VERSIONS（版本数）、和 FILTER（按条件过滤行）等。比如我们从 Sariel 这个 rowkey 开始，找下一个行的最新版本：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scan &#x27;member057&#x27;, &#123; STARTROW =&gt; &#x27;Sariel&#x27;, LIMIT=&gt;1,</span><br><span class="line">VERSIONS=&gt;1&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199504249.png" alt="1620199504249"></p>
-</li>
-</ul>
-<h3 id="Filter-是一个非常强大的修饰词，可以设定一系列条件来进行过滤。比如我们要限制某个列的值等于-26"><a href="#Filter-是一个非常强大的修饰词，可以设定一系列条件来进行过滤。比如我们要限制某个列的值等于-26" class="headerlink" title="Filter 是一个非常强大的修饰词，可以设定一系列条件来进行过滤。比如我们要限制某个列的值等于 26"></a>Filter 是一个非常强大的修饰词，可以设定一系列条件来进行过滤。比如我们要限制某个列的值等于 26</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scan &#x27;member057&#x27;, FILTER=&gt;&quot;ValueFilter(=,&#x27;binary:26&#x27;)&quot;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199511422.png" alt="1620199511422"></p>
-<h3 id="值包含-6-这个值："><a href="#值包含-6-这个值：" class="headerlink" title="值包含 6 这个值："></a>值包含 6 这个值：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scan &#x27;member057&#x27;, FILTER=&gt;&quot;ValueFilter(=,&#x27;substring:6&#x27;)&quot;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199519312.png" alt="1620199519312"></p>
-<h3 id="列名中的前缀为-birth-的"><a href="#列名中的前缀为-birth-的" class="headerlink" title="列名中的前缀为 birth 的"></a>列名中的前缀为 birth 的</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scan &#x27;member057&#x27;, FILTER=&gt;&quot;ColumnPrefixFilter(&#x27;birth&#x27;) &quot;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199523851.png" alt="1620199523851"></p>
-<h3 id="FILTER-中支持多个过滤条件通过括号、AND-和-OR-的条件组合"><a href="#FILTER-中支持多个过滤条件通过括号、AND-和-OR-的条件组合" class="headerlink" title="FILTER 中支持多个过滤条件通过括号、AND 和 OR 的条件组合"></a>FILTER 中支持多个过滤条件通过括号、AND 和 OR 的条件组合</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scan &#x27;member057&#x27;, FILTER=&gt;&quot;ColumnPrefixFilter(&#x27;birth&#x27;) AND</span><br><span class="line">ValueFilter ValueFilter(=,&#x27;substring:1988&#x27;)&quot;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="PrefixFilter-是对-Rowkey-的前缀进行判断-这是一个非常常用的功能。"><a href="#PrefixFilter-是对-Rowkey-的前缀进行判断-这是一个非常常用的功能。" class="headerlink" title="PrefixFilter 是对 Rowkey 的前缀进行判断,这是一个非常常用的功能。"></a>PrefixFilter 是对 Rowkey 的前缀进行判断,这是一个非常常用的功能。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scan &#x27;member057&#x27;, FILTER=&gt;&quot;PrefixFilter(&#x27;E&#x27;)&quot;</span><br></pre></td></tr></table></figure>
-
-<p><img src="Hbase%E5%AE%9E%E9%AA%8C%E4%BA%8C.assets/1620199530370.png" alt="1620199530370"></p>
-
+<p><img src="../images/Hbase%E8%AF%AD%E6%B3%95%E5%AE%9E%E9%AA%8C/1620199317627.png" alt="1620199317627"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/08/Hbase%E8%AF%AD%E6%B3%95%E5%AE%9E%E9%AA%8C/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
